@@ -4,48 +4,395 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>OneKane</title>
+    
     <link rel="stylesheet" href="css/okane.css">
+
+    <link href="https://fonts.googleapis.com/css2?family=Yanone+Kaffeesatz:wght@300;400;500;600&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Oswald:wght@700&display=swap" rel="stylesheet">
+
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css" integrity="sha384-wvfXpqpZZVQGK6TAh5PVlGOfQNHSoD2xbE+QkPxCAFlNEevoEH3Sl0sibVcOQVnN" crossorigin="anonymous">
+    
 </head>
 <body>
     <div class="content">
-        <div class="console"></div>
-        <div class="banner"><img class="lake" src="img/forest-silhouette-watercolor-prints.jpg" alt="">
-            <div class="box">
-                <div class="card"><div class="fondo" style="background: url(img/teslaroad.jpeg)no-repeat bottom center/cover; filter: brightness(1);"></div><img src="img/tesla1.png" alt="tesla" style="height: 70%;"></div>
+        <div class="console">
+            <nav>
+                <a href="#"><img src="img/dashboard.png" alt=""><p>main</p></a>
+                <a href="#"><img src="img/user-profile.png" alt=""><p>profile</p></a>
+                <a href="#"><img src="img/dashboard (1).png" alt=""><p>dashboard</p></a>
+                <a href="#"><img src="img/credit-cards-payment.png" alt="" style="transform: scale(1.15);"><p>payments</p></a>
+                <a href="#"><img src="img/inbox.png" alt=""><p>inbox</p></a>
+                <a href="#"><img src="img/wall-clock.png" alt=""><p>history</p></a>
+                <a href="#"><img src="img/technical-support.png" alt=""><p>support</p></a>
+                <a href="#"><img src="img/settings.png" alt=""><p>global settings</p></a>
+            </nav>
+            <section class="profile">
+                <div class="visual-profile">
+                    <img src="img/phantasma__hope_by_djamilaknopf_dcf4a0w-fullview.jpg" alt="">
+                    <h3 class="username">Arapthor Thorpara</h3>
+                    <p class="status">new user</p>
+                </div>
+                <div class="balance">
+                    <h3>Total funds</h3>
+                    <p class="funds">$150,00</p>
+                    <a href="" class="addfunds"><i class="fa fa-plus" aria-hidden="true"></i></a>
+                </div>
+                <div class="groups">
+                    <h3>Groups</h3>
+                    <div class="mygroups">
+                        <div class="group"></div>
+                        <div class="group"></div>
+                        <div class="group"></div>
+                        <div class="group"></div>
+                    </div>
+                    <a href="" class="allgroups" style="text-align: right; padding: 3px 7px; color: #151515; font-size: 18px;"><i class="fa fa-ellipsis-h" aria-hidden="true"></i>
+                    </a>
+                </div>
+                <div class="historial">
+                    <h3>Historial</h3>
+                    <div class="datos">
+                        <div class="dato"><span>you bought a ticket</span>
+                        <span>12 h ago</span>
+                        <span class="menos">-1$</span></div>
+                        <div class="dato"><span>you earned a ticket</span>
+                            <span>18 h ago</span>
+                            <span class="mas">+1$</span></div>
+                        <div class="dato"><span>you added balance  </span>
+                            <span>2 d ago</span>
+                            <span class="mas">+10$</span></div>
+                        <div class="dato"><span>you send balance  </span>
+                            <span>2 d ago</span>
+                            <span class="menos">-7$</span></div>
+                        <div class="dato"><span>a friend send you balance</span>
+                            <span>2 d ago</span>
+                            <span class="mas">+10$</span></div>
+                    </div>
+                    <a href="" class="allhistorial" style="text-align: right; padding: 3px 7px; color: #151515; font-size: 18px;"><i class="fa fa-ellipsis-h" aria-hidden="true"></i>
+                    </a>
+                </div>
+            </section>
+        </div>
 
-                <div class="card"><div class="fondo" style="background: url(img/fondox.jpeg)no-repeat center center/cover;"></div><img src="img/iphonex.png" alt=""></div>
+        <div class="banner">
+            <div id="last" class="box">
+                <div class="card">
+                <div class="fondo"></div>
+                <img src="" alt="">
+                </div>
 
-                <div class="card"><div class="fondo" style="background: rgb(50, 50, 50);"></div><img src="img/lebron.png" alt="" style="transform: rotate(25deg); top: -20px; left: 12px;"></div>
+                <div class="card">
+                <div class="fondo"></div>
+                <img src="" alt="">
+                </div>
 
-                <div class="card"><div class="fondo" style="background: url(img/ola.png)no-repeat center center/cover;"></div><img src="img/macbook.png" alt=""></div>
+                <div class="card">
+                <div class="fondo"></div>
+                <img src="" alt="">
+                </div>
+
+                <div class="card">
+                <div class="fondo"></div>
+                <img src="" alt="">
+                </div>
+
+                <div class="card">
+                <div class="fondo"></div>
+                <img src="" alt="">
+                </div>
+
+                <div class="card">
+                <div class="fondo"></div>
+                <img src="" alt="">
+                </div>
+
+                <div class="card">
+                <div class="fondo"></div>
+                <img src="" alt="">
+                </div>
+
+                <div class="card">
+                <div class="fondo"></div>
+                <img src="" alt="">
+                </div>
+
+                <div class="card">
+                <div class="fondo"></div>
+                <img src="" alt="">
+                </div>
+
+            </div>
+
+            <div id="this" class="box">
+                <div class="card"><div class="fondo" style="background: url(img/teslaroad.jpeg)no-repeat bottom center/cover; filter: brightness(1);"></div><img src="img/tesla1.png" alt="tesla" style="height: 60%; width: 100%;">
+                <div class="info">Tesla Model 3</div>
+                </div>
+
+                <div class="card"><div class="fondo" style="background: url(img/fondox.jpeg)no-repeat center center/cover;"></div><img src="img/iphonex.png" alt="">
+                <div class="info">Iphone X</div>
+                </div>
+
+                <div class="card"><div class="fondo" style="background: rgb(50, 50, 50);"></div><img src="img/lebron.png" alt="" style="transform: rotate(25deg); top: -20px; left: 17px;">
+                <div class="info">Nike Lebron 15</div>
+                </div>
+
+                <div class="card"><div class="fondo" style="background: url(img/ola.png)no-repeat center center/cover;"></div><img src="img/macbook.png" alt="">
+                <div class="info">Appel Macbook pro</div>
+                </div>
 
                 <div class="card"><div class="fondo"></div>
                 <img src="img/ps4.png" alt="" style="width: 80%;height: 70%;">
+                <div class="info">Sony Ps4</div>
                 </div>
 
                 <div class="card">
                 <div class="fondo" style="background: url(img/s9fondo.jpeg)no-repeat bottom center/cover;"></div>
                 <img src="img/s9.png" alt="" style="height: 90%;">
+                <div class="info">Samsung Galaxy S9</div>
                 </div>
 
                 <div class="card">
-                <div class="fondo" style="background: url(img/wacomfondo.jpeg);"></div>
+                <div class="fondo" style="background: url(img/wacomfondo.jpeg); filter: brightness(1.14);"></div>
                 <img src="img/wacom.png" alt="" style="width: 98%;">
+                <div class="info">Wacom Intuos pro</div>
                 </div>
 
                 <div class="card">
                 <div class="fondo"></div>
                 <img src="img/nintendo.png" alt="" style="width: 90%;height: 50%;">
+                <div class="info">Nintendo Switch</div>
                 </div>
 
                 <div class="card">
                 <div class="fondo"></div>
                 <img src="img/relojxiaomi.png" alt="" style="height: 90%;">
+                <div class="info">Xiaomi Watch</div>
                 </div>
 
             </div>
+
+            <div id="next" class="box">
+                <div class="card">
+                <div class="fondo"></div>
+                <img src="" alt="">
+                </div>
+
+                <div class="card">
+                <div class="fondo"></div>
+                <img src="" alt="">
+                </div>
+
+                <div class="card">
+                <div class="fondo"></div>
+                <img src="" alt="">
+                </div>
+
+                <div class="card">
+                <div class="fondo"></div>
+                <img src="" alt="">
+                </div>
+
+                <div class="card">
+                <div class="fondo"></div>
+                <img src="" alt="">
+                </div>
+
+                <div class="card">
+                <div class="fondo"></div>
+                <img src="" alt="">
+                </div>
+
+                <div class="card">
+                <div class="fondo"></div>
+                <img src="" alt="">
+                </div>
+
+                <div class="card">
+                <div class="fondo"></div>
+                <img src="" alt="">
+                </div>
+
+                <div class="card">
+                <div class="fondo"></div>
+                <img src="" alt="">
+                </div>
+
+            </div>    
+
+            <div class="preview">
+                <p href="" class="last">Last week</p>
+                <p href="" class="this clicked">This week</p>
+                <p href="" class="next">Next week</p>
+            </div>
+            
+            <svg class="close" height="25" width="25">
+                <path id="AB" d="M 0 0 L25 25 Z" stroke="rgba(217, 217, 218, 0.7)" stroke-width="4"></path>
+                <path id="DE" d="M 25 0 L0 25 Z" stroke="rgba(217, 217, 218, 0.7)" stroke-width="4"></path>
+            </svg>
+            <div class="information"></div>
+            <div class="information"></div>
+            <div class="information"></div>
+            <div class="information"></div>
+            <div class="information"></div>
+            <div class="information"></div>
+            <div class="information"></div>
+            <div class="information"></div>
+            <div class="information"></div>
+
         </div>
-        <section class="stats"></section>
+
+        <section class="stats">
+            <div class="bets">
+            <article class="activo">
+                <h3>Your current bets <span>Total investment <span>3$</span></span></h3>
+                    <div class="bar"><h4>Apple Iphone X <span>1°/10</span></h4><progress max="100" value="20"></progress><h5>20%</h5><p class="uso">1$</p></div>
+                    <div class="bar"><h4>Samsung Galaxy S9<span>1°/10</span></h4><progress max="100" value="100"></progress><h5>100%</h5><p class="uso">1$</p></div>
+                    <div class="bar"><h4>Nike Lebron 15<span>1°/10</span></h4><progress max="100" value="28"></progress><h5>28%</h5><p class="uso">1$</p></div>
+                    <div class="bar"></div>
+                    <a href="#" class="bar plus">View your account</a>
+            </article>
+            <article class="finalizado">
+                <h3>Your finished bets</h3>
+                    <div class="bar win"><h4>Tesla model 3<span>1°/10</span></h4></div>
+                    <div class="bar lose"><h4>Tesla model 3<span>1°/10</span></h4></div>
+                    <div class="bar back"><h4>Tesla model 3<span>1°/10</span></h4></div>
+                    <div class="bar nextime"><h4>Tesla model 3<span>1°/10</span></h4></div>
+                    <a href="#" class="bar plus">View your account</a>
+            </article>
+            </div>
+            <article class="actividad"><span style="background-color: white; width: 21px; height: 50px;position: absolute; left: 12px; top: 60px; z-index: 3;"></span><span style="background-color: white; width: 21px; height: 50px;position: absolute; left: 12px; top: 125px; z-index: 3;"></span>
+                <h3>Recent activity</h3>
+                <canvas id="myChart" style="width: 90%; height: 70%;"></canvas>
+            </article>
+        </section>
     </div>
+
+    
+<!--Script-->
+<script src="https://cdn.jsdelivr.net/npm/chart.js@2.9.3/dist/Chart.min.js"></script>
+<script src="https://code.jquery.com/jquery-3.3.1.js"></script>
+  
+<script>
+    var ctx = document.getElementById('myChart').getContext('2d');
+var chart = new Chart(ctx, {
+    // The type of chart we want to create
+    type: 'line',
+
+    // The data for our dataset
+    data: {
+        labels: ['week 0', 'week 1', 'week 2', 'week 3', 'week 4'],
+        datasets: [{
+            label: '',
+            backgroundColor: 'rgba(32, 178, 171, 0.801)',
+            borderColor: 'lightseagreen',
+            data: [0, 20, 5, 1, 15]
+        }]
+    },
+
+    // Configuration options go here
+    options: {
+        legend: {display: false},
+        
+        layout:{
+            padding: {top:10,bottom:0,right:5,left:5},
+        },
+        elements:{
+            point: {borderWidth: 2},
+            line: {
+                tension: 0.4 // disables bezier curves
+            }
+        },
+        line:{
+            point: {backgroundColor: 'green'},
+        },
+        tooltips:{
+            
+        },
+    }
+});
+</script>
+
+<script type="text/javascript">
+var ba = $('.banner');
+    $('.last').click(function(){
+        ba.css('top', '0');
+        $(this).siblings().removeClass('clicked');
+        $(this).addClass('clicked');
+    })
+    $('.this').click(function(){
+        ba.css('top', '-100vh');
+        $(this).siblings().removeClass('clicked');
+        $(this).addClass('clicked');
+    })
+    $('.next').click(function(){
+        ba.css('top', '-200vh');
+        $(this).siblings().removeClass('clicked');
+        $(this).addClass('clicked');
+    })
+</script>
+
+<script type="text/javascript">
+    var cartas = document.querySelectorAll('.card');
+    var eventana = document.querySelectorAll('.information');
+    var bloqueo = document.querySelector('.box:nth-child(2)');
+    var funds = document.querySelector('.close')
+
+    function bloq() {
+        funds.classList.add('see');
+        bloqueo.classList.add('see');
+    };
+    function desbloq() {
+        funds.classList.remove('see');
+        bloqueo.classList.remove('see');
+    };
+
+    cartas[9].addEventListener('click', ()=>{
+        bloq();
+        eventana[0].classList.add('see');
+    })
+    cartas[10].addEventListener('click', ()=>{
+        bloq();
+        eventana[1].classList.add('see');
+    })
+    cartas[11].addEventListener('click', ()=>{
+        bloq();
+        eventana[2].classList.add('see');
+    })
+    cartas[12].addEventListener('click', ()=>{
+        bloq();
+        eventana[3].classList.add('see');
+    })
+    cartas[13].addEventListener('click', ()=>{
+        bloq();
+        eventana[4].classList.add('see');
+    })
+    cartas[14].addEventListener('click', ()=>{
+        bloq();
+        eventana[5].classList.add('see');
+    })
+    cartas[15].addEventListener('click', ()=>{
+        bloq();
+        eventana[6].classList.add('see');
+    })
+    cartas[16].addEventListener('click', ()=>{
+        bloq();
+        eventana[7].classList.add('see');
+    })
+    cartas[17].addEventListener('click', ()=>{
+        bloq();
+        eventana[8].classList.add('see');
+    })
+
+    funds.addEventListener('click', ()=>{
+        desbloq();
+        for (let index = 0; index < eventana.length; index++) {
+            eventana[index].classList.remove('see');
+        }
+    })
+</script>
+
+<!--Script-->
+  
+
+
 </body>
 </html>
