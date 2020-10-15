@@ -1,8 +1,3 @@
-:root{
-    --coloruno: #81D2E7;
-    --colordos: #FE5D6C;
-    --colortres: #79F8F5;
-}
 *{
     box-sizing: border-box;
     padding: 0;
@@ -12,7 +7,8 @@
 }
 body,html{
     scroll-behavior: smooth;   
-    background: #f3faf9;
+    background-color: rgba(129, 210, 231, 0.05);
+    background-image: url(../img/diagonal-lines.svg);
     overflow-y: hidden;
 }
 body::-webkit-scrollbar{
@@ -31,14 +27,51 @@ body::-webkit-scrollbar-thumb{
 }
 a{
     text-decoration: none;
+    color: #151515;
 }
+.preloader{
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100vh;
+    z-index: 3;
+    background: white;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+.preloader span{
+    width: 90px;
+    height: 90px;
+    border-radius: 50%;
+    border: #0764ce 7px solid;
+    border-right-style: dotted;
+    border-top-color: transparent;
+    animation: loader 4s infinite linear;
+}
+@keyframes loader{
+    25%{transform: rotate(180deg);}
+    50%{transform: rotate(360deg); border-color: #FE5D6C;border-top-color: transparent;}
+    75%{transform: rotate(440deg);border-color: #FE5D6C;border-top-color: transparent;}
+    100%{transform: rotate(720deg);}
+}
+.preloader div{
+    position: absolute;
+    width: 60px;
+    height: 60px;
+    border-radius: 50%;
+    background: url(../img/diagonal-lines.svg);
+}
+
+
 .content{
     width: 100%;
     height: 300vh;
     display: flex;
 }
 
-/*  Menu Izquierdo  */
+/*  Panel Izquierdo  */
 .console{
     position: sticky;
     top: 0;
@@ -53,22 +86,63 @@ a{
     left: 0;
     width: 16%;
     height: 100%;
-    background: rgba(217, 217, 218, 0.486);
+    background: #d9e0e4;
     display: flex;
     flex-direction: column;
     justify-content: flex-start;
+    overflow: hidden;
+    z-index: 3;
+    transition: .5s ease-in-out;
+}
+.console nav:hover{
+    width: 100%;
+    background: #FE5D6C;
+    transition: .5s ease-in-out;
+    transition-delay: .6s;
+}
+nav h1{
+    position: absolute;
+    bottom: 45px;
+    left: -13px;
+    color: #303030;
+    transform: rotate(-90deg);
+}
+.console nav a::before{
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: #d9e0e4;
+    transition-delay: 0.5s;
+}
+
+.console nav:hover a::before{
+    opacity: 0;
+    transition-delay: 0.6s;
 }
 .console nav a{
-    width: 150px;
+    width: 17vw;
     height: 60px;
+    color: white;
     display: flex;
-    justify-content: space-between;
+    justify-content: flex-start;
     align-items: center;
     padding: 5px;
+}
+.console nav a:hover{
+    background: #f5374a60;
+    border-right: 5px solid #f5374a;
+}
+.console nav a.active img{
+    filter: brightness(1);
 }
 .console nav a img{
     width: 23px;
     height: 23px;
+    margin-right: 50px;
+    filter: brightness(0);
 }
 .console .profile{
     width: 84%;
@@ -79,7 +153,7 @@ a{
     flex-direction: column;
     justify-content: space-between;
     align-items: center;
-    background: rgba(217, 217, 218, 0.486);
+    background: #d9e0e4;
 }
 .console .profile .visual-profile{
     width: 100%;
@@ -177,6 +251,10 @@ a{
 .console .profile .groups .mygroups .group:nth-last-child(2n + 1){
     background: url(../img/preorders_open__kitsune_t_shirt_by_djamilaknopf_dcxmvz1-fullview.jpg)no-repeat center center/cover;
 }
+.console .profile .groups .mygroups .group:hover{
+    transform: scale(.9);
+    transition: 0.2s;
+}
 .console .profile .historial{
     padding: 5vh 0px 0px 0px;
 }
@@ -191,12 +269,16 @@ a{
 .console .profile .historial .datos .dato{
     width: 100%;
     height: 20%;
-    border:1.5px #e6fcf8cb solid;
+    border:1.5px rgba(129, 210, 231, 0.1) solid;
     display: flex;
     justify-content: space-between;
     align-items: center;
     font-size: 5px;
     padding: 0 5px;
+}
+.console .profile .historial .datos .dato:hover{
+    background:rgba(129, 210, 231, 0.1);
+    transition: 0.25s;
 }
 .console .profile .historial .datos .dato span:nth-last-child(2){
     opacity: 0.7;
@@ -216,9 +298,9 @@ a{
     height: 3.1vh;
     width: 100%;
     font-size: 0.95em;
-    background:#e6fcf8cb;
+    background:rgba(129, 210, 231, 0.15);
 }
-/*  Menu Izquierdo  */
+/* */
 
 /* Central */
 .banner{
@@ -234,14 +316,14 @@ a{
 .preview{
     position: fixed;
     top: 0;
-    left: 21%;
+    left: 22.35%;
     display: flex;
     justify-content: flex-start;
     align-items: center;
     padding: 23px 0 18px 0;
-    width: 39.5vw;
+    width: 37vw;
     height: 30px;
-    background: #f3faf9;
+    background: #f6f9fa;
     border-bottom: rgba(202, 202, 202, 0.959) 2.4px solid;
 }
 .preview p{
@@ -252,24 +334,26 @@ a{
     margin: 0 10px;
     color: #151515;
     cursor: default;
+    -webkit-user-select: none;
 }
 .preview p.clicked{
     color: black;
     border-bottom: 3px solid #0764ce;
 }
 .box{
-    top: 0;
+    top: 20px;
     display: grid;
-    width: 39vw;
-    height: 82vh;
-    margin: 9vh 0;
+    width: 37vw;
+    height: 81vh;
+    margin: 9.5vh 0;
     grid-template-columns: repeat(16,1fr);
     grid-auto-rows: auto;
     gap: 7px;
     transition: 0.5s;
+    
 }
 .box.see{
-    filter: saturate(0.5);
+    filter: saturate(0) opacity(0.9);
     pointer-events: none;
     transition: 1s;
 }
@@ -280,8 +364,13 @@ a{
     justify-content: center;
     align-items: center;
     border-radius: 5px;
-    box-shadow: 0px 0px 10px rgba(0, 0, 0, 0.15);
+    box-shadow: 0px 0px 10px rgba(0, 0, 0, 0.25);
     overflow: hidden;
+    cursor: pointer;
+}
+
+.box:nth-child(2n + 1) .card{
+    box-shadow: none;
 }
 .card:nth-child(1){
     grid-column: 9/17;
@@ -324,12 +413,20 @@ a{
     width: 100%;
     height: 100%;
     background: rgb(226, 226, 226);
-    filter: brightness(0.8);
+    filter: brightness(0.8) saturate(0);
     border-radius: 5px;
+}
+.card:nth-child(2n + 1) .fondo{
+    background: #505050;
+}
+.box:nth-child(2n + 1) .card .fondo{
+    background: rgba(255, 255, 255, 0.3);
+    filter: brightness(1) saturate(1);
 }
 .card img{
     width: 110%;
     height: 100%;
+    -webkit-user-select: none;
 }
 .box:nth-child(2n + 1) .card img{
     display: none;
@@ -342,16 +439,18 @@ a{
     height: 45vh;
     top: 50%;
     left: 50%;
-    transform: translate(-50%,-50%) scale(.9);
+    transform: translate(-50%,-50%) scale(0.9);
     color: white;
-    background: #f3faf9;
+    background: #FE5D6C;
     font-family: 'Oswald', sans-serif;
     font-size: 24px;
     display: flex;
+    flex-direction: column;
     justify-content: center;
     align-items: flex-start;
+    padding: 20px;
     transition: 0.5s;
-    border-radius: 2.5px;
+    border-radius: 3.5px;
     box-shadow: 0px 0px 10px rgba(0, 0, 0, 0.2);
     visibility: hidden;
     opacity: 0;
@@ -362,27 +461,48 @@ a{
     transform: translate(-50%,-50%) scale(1);
     transition: .5s;
 }
+.information section{
+    margin: 2.5px 0;
+}
+.information h2{
+    color: #f5374a;
+    font-size: 2.5em;
+}
+.information a{
+    text-transform: uppercase;
+    left: 54%;
+    top: 10%;
+    border-top: #f5374a 3px solid;
+    padding: 5px;
+}
 .close{
     position: absolute;
     top: 44%;
     left: 75%;
     transform: translate(-50%,-50%);
     z-index: 2;
-    display: none;
+    visibility: hidden;
+    opacity: 0.2;
+    cursor: pointer;
 }
 .close.see{
-    display: block;
+    visibility: visible;
+    opacity: 1;
+    transform: translate(-50%,-50%);
+    transition: .8s;
+    transition-delay: .7s;
 }
-/* central */
 
-/*  Actividad - menu derecho */
+/* */
+
+/*  Actividad - panel derecho */
 .stats{
     position: sticky;
     top: 0;
     right: 0;
     width: 35%;
     height: 100vh;
-    padding: 15px 20px 15px 10px;
+    padding: 40px 20px 10px 10px;
     display: flex;
     flex-direction: column;
     justify-content: space-between;
@@ -417,7 +537,7 @@ a{
 article h3{
     width: 100%;
     height: 20%;
-    background: #f3faf9cb;
+    background: rgba(129, 210, 231, 0.1);
     color: rgb(32, 32, 32);
     display: flex;
     justify-content: flex-start;
@@ -441,7 +561,7 @@ article h3 span span{
 .bar{
     width: 96%;
     height: 16%;
-    border-bottom: #f3faf9 4px solid;
+    border-bottom: rgba(129, 210, 231, 0.1) 4px solid;
     display: flex;
     justify-content: flex-end;
     align-items: center;
@@ -449,6 +569,33 @@ article h3 span span{
     overflow: hidden;
     border-radius: 3px;
     margin-top: 4px;
+    cursor: pointer;
+}
+.finalizado .bar{
+    border-bottom: none;
+}
+.activo .bar{
+    transition: 0.3s;
+}
+.activo .bar:hover{
+    opacity: 0.7;
+    transition: 0.3s;
+}
+.finalizado .bar::before{
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    height: 0%;
+    width: 100%;
+    background-color: rgb(139, 139, 139);
+    transition: all 0.85s cubic-bezier(0.68, -0.55, 0.265, 1.55);
+}
+.activo .bar:hover::before{
+    width: 100%;    
+}
+.finalizado .bar:hover::before{
+    height: 110%;
 }
 .finalizado .bar::after{
     position: absolute;
@@ -464,13 +611,19 @@ article h3 span span{
     background: #b4e9c0;
     border-top: 4px solid rgba(70, 185, 70, 0.705);
 }
+.finalizado .bar.win::before{
+    background: rgba(70, 185, 70, 0.705);
+}
 .bar.win::after{
     content: 'WINNER';
     color: rgba(70, 185, 70, 0.3);
 }
 .bar.lose{
     background: #e9b4b4;
-    border-top: 4px solid rgb(185, 70, 70);
+    border-top: 4px solid rgb(207, 68, 68);
+}
+.finalizado .bar.lose::before{
+    background: rgb(207, 68, 68);
 }
 .bar.lose::after{
     content: 'LOSER';
@@ -478,7 +631,10 @@ article h3 span span{
 }
 .bar.back{
     background: #f7de3ba8;
-    border-top: 4px solid rgb(206, 196, 58);
+    border-top: 4px solid rgb(247, 235, 75);
+}
+.finalizado .bar.back::before{
+    background: rgb(247, 235, 75);
 }
 .bar.back::after{
     content: 'ONE MORE CHANCE';
@@ -534,7 +690,6 @@ article.finalizado h4 span{
     height: 100%;
     border-radius: 5px;
     overflow: hidden;
-
 }
 .bar ::-webkit-progress-value{
     border-right: 2px solid gray;
@@ -542,7 +697,6 @@ article.finalizado h4 span{
     background-size: 8px;
     opacity: 0.6;
 }
-
 .bar h5{
     position: absolute;
     font-family: sans-serif;
@@ -556,10 +710,18 @@ article.finalizado h4 span{
 .plus{
     position: absolute;
     justify-content: flex-start;
-    padding-top: 10px;
     bottom: 0;
-    color: lightseagreen;
+    color: rgb(129, 210, 231);
     border-bottom: none;
     text-decoration: none;
+    width: 96%;
+    height: 16%;
+    display: flex;
+    align-items: center;
+    padding: 10px 10px 0px 10px;
+    overflow: hidden;
+    border-radius: 3px;
+    margin-top: 4px;
+    cursor: pointer;
 }
-/*  Actividad - menu derecho */
+/* */
