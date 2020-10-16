@@ -228,6 +228,7 @@
                 <p href="" class="this clicked">This week</p>
                 <p href="" class="next">Next week</p>
             </div>
+
      
     <!-- Ventanas emergentes -->                    
             <svg class="close" height="25" width="25">
@@ -322,9 +323,13 @@
                     <a href="#" class="plus">View your account</a>
             </article>
             </div>
-            <article class="actividad"><span style="background-color: white; width: 21px; height: 47px;position: absolute; left: 12px; top: 60px; z-index: 3;"></span><span style="background-color: white; width: 21px; height: 47px;position: absolute; left: 12px; top: 122px; z-index: 3;"></span>
-                <h3>Recent activity</h3>
-                <canvas id="myChart" style="width: 90%; height: 70%;"></canvas>
+            <article class="guide">
+                <div class="list">
+                    <h3>How does it work?
+                        <span>take tutorial</span>
+                    </h3>
+                </div>
+                <img src="img/guide.svg" alt="" style="width: 60%; top: 35px; filter: sepia(1) hue-rotate(180deg) opacity(0.5);">
             </article>
         </section>
     </div>
@@ -374,9 +379,10 @@ var chart = new Chart(ctx, {
 });
 </script>
 
-<script type="text/javascript">
-    var loader = document.querySelector('.preloader');
-    document.onload(loader.style.display = 'none');
+<script>
+    window.onload = function(){
+        $('.preloader').fadeOut();
+    }
 </script>
 
 <script type="text/javascript">
