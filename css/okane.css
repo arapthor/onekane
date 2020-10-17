@@ -9,7 +9,7 @@ body,html{
     scroll-behavior: smooth;   
     background-color: rgba(129, 210, 231, 0.05);
     background-image: url(../img/diagonal-lines.svg);
-    overflow-y: hidden;
+    background-attachment: fixed;
 }
 body::-webkit-scrollbar{
     width: 5px;
@@ -67,7 +67,6 @@ a{
 
 .content{
     width: 100%;
-    height: 300vh;
     display: flex;
 }
 
@@ -304,11 +303,18 @@ nav h1{
 
 /* Central */
 .banner{
-    top: -100vh;
+    top: 0;
     width: 48%;
-    height: 300vh;
+    height: 168vh;
+    overflow-x: hidden;
+}
+.banner section{
+    padding-top: 40vh;
+    left: -100%;
+    width: 300%;
+    height: 100%;
     display: flex;
-    flex-direction: column;
+    flex-direction: row;
     justify-content: space-between;
     align-items: center;
     transition: 0.6s;
@@ -316,7 +322,7 @@ nav h1{
 .preview{
     position: fixed;
     top: 0;
-    left: 22.35%;
+    left: 22.45%;
     display: flex;
     justify-content: flex-start;
     align-items: center;
@@ -325,6 +331,7 @@ nav h1{
     height: 30px;
     background: #f6f9fa;
     border-bottom: rgba(202, 202, 202, 0.959) 2.4px solid;
+    z-index: 5;
 }
 .preview p{
     top: 5px;
@@ -343,9 +350,9 @@ nav h1{
 .box{
     top: 20px;
     display: grid;
-    width: 37vw;
+    width: 48vw;
     height: 81vh;
-    margin: 9.5vh 0;
+    padding: 0 5.5vw;
     grid-template-columns: repeat(16,1fr);
     grid-auto-rows: auto;
     gap: 7px;
@@ -355,6 +362,27 @@ nav h1{
     filter: saturate(0) opacity(0.9);
     pointer-events: none;
     transition: 1s;
+}
+.box img.globo{
+    position: absolute;
+    left: 50%; 
+    top: -335px;
+    width: 300px; 
+    height: 300px;
+    transform: translateX(-50%);
+    z-index: 2;
+    border-radius: 50%;
+}
+.box .glob{
+    position: absolute;
+    left: 50%; 
+    top: -360px;
+    width: 37vw;
+    height: 350px;
+    transform: translateX(-50%);
+    z-index: 1;
+    background: #0764ce;
+    border-radius: 4px;
 }
 .card{
     width: 100%;
@@ -433,11 +461,11 @@ nav h1{
 .card .info{display: none;}
 
 .information{
-    position: absolute;
-    width: 60%;
+    position: fixed;
+    width: 29vw;
     height: 45vh;
-    top: 50%;
-    left: 50%;
+    top: 50vh;
+    left: 41%;
     transform: translate(-50%,-50%) scale(0.9);
     color: white;
     background: #FE5D6C;
@@ -461,24 +489,38 @@ nav h1{
     transition: .5s;
 }
 .information section{
-    margin: 2.5px 0;
+    position: absolute;
+    left: 8%;
+    top: -50%;
+}
+.information section.valor{
+    top: -45%;
+}
+.information section.chances{
+    top: -35%;
+}
+.information section.monitor{
+    top: -25%;
 }
 .information h2{
+    position: absolute;
     color: #f5374a;
+    top: 20%;
+    left: 8%;
     font-size: 2.5em;
 }
 .information a{
+    position: absolute;
     text-transform: uppercase;
-    left: 54%;
-    top: 10%;
+    bottom: 14%;
+    left: 55%;
     border-top: #f5374a 3px solid;
     padding: 5px;
 }
 .close{
-    position: absolute;
-    top: 44%;
-    left: 75%;
-    transform: translate(-50%,-50%);
+    position: fixed;
+    top: 31%;
+    left: 52%;
     z-index: 2;
     visibility: hidden;
     opacity: 0.2;
@@ -487,7 +529,6 @@ nav h1{
 .close.see{
     visibility: visible;
     opacity: 1;
-    transform: translate(-50%,-50%);
     transition: .8s;
     transition-delay: .7s;
 }

@@ -87,6 +87,8 @@
 
 <!--  Panel derecho / estado -->                
         <div class="banner">
+
+            <section>
             <div id="last" class="box">
                 <div class="card">
                 <div class="fondo"></div>
@@ -133,6 +135,9 @@
                 <img src="" alt="">
                 </div>
 
+                <img class="globo" src="img/purple.jpg" alt="" >
+                <span class="glob" style="background: url(img/purple.jpg)no-repeat center center/cover;"></span>
+
             </div>
 
             <div id="this" class="box">
@@ -172,6 +177,9 @@
                 <div class="fondo"></div>
                 <img src="img/relojxiaomi.png" alt="" style="height: 90%;">
                 </div>
+
+                <img class="globo" src="img/sunset-8k-forest-4k-wallpaper-preview.jpg" alt="" >
+                <span class="glob" style="background: url(img/sunset-8k-forest-4k-wallpaper-preview.jpg)no-repeat center center/cover;"></span>
 
             </div>
 
@@ -221,7 +229,11 @@
                 <img src="" alt="">
                 </div>
 
+                <img class="globo" src="img/minimalist-nature-forest-mountains-digital-art-uhdpaper.com-4K-36-wp.thumbnail.jpg" alt="" >
+                <span class="glob" style="background: url(img/minimalist-nature-forest-mountains-digital-art-uhdpaper.com-4K-36-wp.thumbnail.jpg)no-repeat center center/cover;"></span>
+
             </div>    
+            </section>
 
             <div class="preview">
                 <p href="" class="last">Last week</p>
@@ -386,19 +398,19 @@ var chart = new Chart(ctx, {
 </script>
 
 <script type="text/javascript">
-var ba = $('.banner');
+var ba = $('.banner section');
     $('.last').click(function(){
-        ba.css('top', '0');
+        ba.css('left', '0');
         $(this).siblings().removeClass('clicked');
         $(this).addClass('clicked');
     })
     $('.this').click(function(){
-        ba.css('top', '-100vh');
+        ba.css('left', '-100%');
         $(this).siblings().removeClass('clicked');
         $(this).addClass('clicked');
     })
     $('.next').click(function(){
-        ba.css('top', '-200vh');
+        ba.css('left', '-200%');
         $(this).siblings().removeClass('clicked');
         $(this).addClass('clicked');
     })
