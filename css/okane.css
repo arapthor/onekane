@@ -6,23 +6,27 @@
     font-family: 'Yanone Kaffeesatz', sans-serif;
 }
 body,html{
-    scroll-behavior: smooth;   
+    scroll-behavior: smooth;
+}
+body{
     background-color: rgba(129, 210, 231, 0.05);
     background-image: url(../img/diagonal-lines.svg);
     background-attachment: fixed;
+    overflow-y: hidden;
 }
 body::-webkit-scrollbar{
     width: 5px;
     height: 5px;
     background: transparent;
+    display: none;
 }
 body::-webkit-scrollbar-track{
-    background: transparent;
+    background: url(../img/diagonal-lines.svg);
 }
 
 body::-webkit-scrollbar-thumb{
     width: 5px;
-    background: rgb(180, 180, 180);
+    background: linear-gradient(180deg,#0764ce,#0764ce7c);
     border-radius: 50px;
 }
 a{
@@ -35,11 +39,12 @@ a{
     left: 0;
     width: 100%;
     height: 100vh;
-    z-index: 3;
+    z-index: 10;
     background: white;
     display: flex;
     justify-content: center;
     align-items: center;
+    transition-delay: 10s;
 }
 .preloader span{
     width: 90px;
@@ -141,6 +146,7 @@ nav h1{
     width: 23px;
     height: 23px;
     margin-right: 50px;
+    padding-right: 2px;
     filter: brightness(0);
 }
 .console .profile{
@@ -225,7 +231,7 @@ nav h1{
     width: 24%;
     left: 74%;
     border-radius: 3px;
-    background: rgba(217, 217, 218, 0.5);
+    background: rgba(217, 217, 218, 0.8);
     margin-top: 5px;
     display: flex;
     justify-content: center;
@@ -242,8 +248,8 @@ nav h1{
     align-items: center;
 }
 .console .profile .groups .mygroups .group{
-    width: 40px;
-    height: 40px;
+    width: 3.15vw;
+    height: 3.15vw;
     background: url(../img/sunset-8k-forest-4k-wallpaper-preview.jpg)no-repeat center center/cover;
     border-radius: 50%;
 }
@@ -259,16 +265,17 @@ nav h1{
 }
 .console .profile .historial .datos{
     width: 100%;
-    height: calc(100% - 15px);
+    height: calc(100% - 21px);
     display: flex;
     flex-direction: column;
     justify-content: flex-start;
     align-items: center;
+    z-index: 2;
 }
 .console .profile .historial .datos .dato{
     width: 100%;
     height: 20%;
-    border:1.5px rgba(129, 210, 231, 0.1) solid;
+    border:1.5px rgba(129, 131, 231, 0.15) solid;
     display: flex;
     justify-content: space-between;
     align-items: center;
@@ -276,7 +283,7 @@ nav h1{
     padding: 0 5px;
 }
 .console .profile .historial .datos .dato:hover{
-    background:rgba(129, 210, 231, 0.1);
+    background:rgba(129, 131, 231, 0.15);
     transition: 0.25s;
 }
 .console .profile .historial .datos .dato span:nth-last-child(2){
@@ -297,7 +304,8 @@ nav h1{
     height: 3.1vh;
     width: 100%;
     font-size: 0.95em;
-    background:rgba(129, 210, 231, 0.15);
+    background:#e6f2f7;
+    z-index: 1;
 }
 /* */
 
@@ -322,7 +330,7 @@ nav h1{
 .preview{
     position: fixed;
     top: 0;
-    left: 22.45%;
+    left: 22.51%;
     display: flex;
     justify-content: flex-start;
     align-items: center;
@@ -332,6 +340,9 @@ nav h1{
     background: #f6f9fa;
     border-bottom: rgba(202, 202, 202, 0.959) 2.4px solid;
     z-index: 5;
+}
+.preview.bloq{
+    pointer-events: none;
 }
 .preview p{
     top: 5px;
@@ -383,6 +394,25 @@ nav h1{
     z-index: 1;
     background: #0764ce;
     border-radius: 4px;
+}
+.box .glo{
+    position: absolute;
+    left: 33%; 
+    top: -280px;
+    font-size: 30px;
+    width: 15vw;
+    height: 350px;
+    transform: translateX(-50%);
+    color: white;
+    z-index: 2;
+}
+.box .glo span{
+    position: absolute;
+    width: 100%;
+    left: 0;
+    top: 27%;
+    font-size: 0.8em;
+    color: #0764ce;
 }
 .card{
     width: 100%;
@@ -463,7 +493,7 @@ nav h1{
 .information{
     position: fixed;
     width: 29vw;
-    height: 45vh;
+    height: 47vh;
     top: 50vh;
     left: 41%;
     transform: translate(-50%,-50%) scale(0.9);
@@ -475,7 +505,7 @@ nav h1{
     flex-direction: column;
     justify-content: center;
     align-items: flex-start;
-    padding: 20px;
+    padding: 10px 10px 0 10px;
     transition: 0.5s;
     border-radius: 3.5px;
     box-shadow: 0px 0px 10px rgba(0, 0, 0, 0.2);
@@ -488,32 +518,37 @@ nav h1{
     transform: translate(-50%,-50%) scale(1);
     transition: .5s;
 }
-.information section{
-    position: absolute;
-    left: 8%;
-    top: -50%;
+.information .valores{
+    left: 5%;
+    top: 0;
+    width: 29vw;
+    padding: 10px 0;
+    font-size: 30px;
+    height: 40%;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    align-items: flex-start;
+    transition: none;
 }
-.information section.valor{
-    top: -45%;
-}
-.information section.chances{
-    top: -35%;
-}
-.information section.monitor{
-    top: -25%;
+.information .valores div{
+    width: 40%;
+    text-align: left;
 }
 .information h2{
-    position: absolute;
     color: #f5374a;
-    top: 20%;
-    left: 8%;
+    height: 34%;
+    width: 82%;
+    top: 2%;
+    left: 4%;
+    display: flex;
+    align-items: flex-end;
     font-size: 2.5em;
 }
 .information a{
-    position: absolute;
     text-transform: uppercase;
-    bottom: 14%;
-    left: 55%;
+    bottom: 0;
+    left: 63%;
     border-top: #f5374a 3px solid;
     padding: 5px;
 }
@@ -542,7 +577,7 @@ nav h1{
     right: 0;
     width: 35%;
     height: 100vh;
-    padding: 40px 20px 10px 10px;
+    padding: 40px 20px 5px 5px;
     display: flex;
     flex-direction: column;
     justify-content: space-between;
@@ -553,15 +588,6 @@ nav h1{
     display: flex;
     justify-content: space-between;
     align-items: center;
-}
-.guide{
-    width: 100%;
-    height: 37%;
-    background: #0764ce;
-    box-shadow: 0px 0px 10px rgba(0, 0, 0, 0.1);
-    border-radius: 5px;
-    display: flex;
-    overflow: hidden;
 }
 .activo,.finalizado{
     width: 48%;
@@ -766,6 +792,15 @@ article.finalizado h4 span{
     cursor: pointer;
 }
 
+.guide{
+    width: 100%;
+    height: 37%;
+    background: #0764ce;
+    box-shadow: 0px 0px 10px rgba(0, 0, 0, 0.1);
+    border-radius: 5px;
+    display: flex;
+    
+}
 .guide .list{
     height: 100%;
     width: 40%;
@@ -781,7 +816,115 @@ article.finalizado h4 span{
     color: #80AFE7;
     font-size: 16px;
     bottom: 25px;
+    right: 25px;
+    padding-top: 5px;
+    border-top: #0764ce 4px solid;
+    cursor: pointer;
+    -webkit-user-select: none;
+}
+.guide .timeline{
+    display: none;
+}
+.guide .step{
+    display: none;
 }
 
+
+.guide.tutorial{
+    position: absolute;
+    top: 40px;
+    left: 5px;
+    width: calc(100% - 20px);
+    height: calc(100% - 45px);
+    background: #0764ce;
+    z-index: 3;
+}
+.guide .folleto{
+    width: 60%; 
+    top: 35px; 
+}
+.guide .folleto img{
+    width: 100%;
+    filter: sepia(1) hue-rotate(180deg) opacity(0.5);
+}
+.guide.tutorial img{
+    position: absolute;
+    width: 40%;
+    right: 35px;
+    top: -15px;
+    transform: rotateY(180deg);
+}
+
+.guide.tutorial .timeline{
+    position: absolute;
+    top: 28%;
+    left: 0;
+    width: 100%;
+    height: 62%;    
+    display: flex;   
+    flex-direction: column;
+    justify-content: space-between;
+    align-items: flex-start;
+}    
+.guide.tutorial .timeline .mark{
+    content: '';
+    padding-left: 5.5vw;
+    color: white;
+    height: 20%;
+    width: 100%;
+}   
+.guide.tutorial .timeline .mark::after{
+    position: absolute;
+    content: '';
+    color: white;
+    height: 2vw;
+    width: 2vw;
+    background: #0764ce;
+    border-radius: 50%;
+    transition: 0.5s;
+}
+.guide.tutorial .timeline .mark::before{
+    position: absolute;
+    content: '';
+    background: #0764ce;
+    width: 5px;
+    height: 63%;
+    position: absolute;
+    left: 6.5vw;
+    top: 0;
+    transform: translate(-50%,-98%);
+    transition: 0.5s;
+}
+.guide.tutorial .timeline .mark:first-child::before{
+    display: none;
+}
+.guide.tutorial .timeline .mark.lleno::after,.guide.tutorial .timeline .mark.lleno::before{
+    background: white;
+    transition: 0.5s;
+}
+.guide.tutorial .timeline .mark span{
+    color: #398de7;
+    width: 16.5vw;
+    height: 10vh;
+    left: 15.5vw;
+    top: 5%;
+    position: absolute;
+}
+.guide.tutorial .timeline .mark:hover span{
+    transform: scale(1.1);
+    transition: 0.35s;
+    color: #499cf5;
+}
+.guide.tutorial .step{
+    position: absolute;
+    width: 2vw;
+    height: 2vw;
+    border-radius: 50%;
+    background: #FE5D6C;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    transform: translate(-50%,-50%);
+}
 
 /* */
