@@ -360,7 +360,7 @@
             </article>
             </div>
 
-            <article class="guide tutorial">
+            <article class="guide">
                 <div class="list">
                     <h3>How does it work?
                         <span>take tutorial</span>
@@ -368,34 +368,43 @@
                 </div>
 
                 <div class="timeline">
-                    <span class="mark">
+                    <span class="mark" style="width: 14.28vw; height: 29.6vh; left: 2.72vw; top: 19.7vh;">
                         <span>
                             <h4>step 1</h4>
                             <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit.</p>
+                            <div class="nextstep">next</div>
                         </span>
                     </span>
-                    <span class="mark">
+                    <span class="mark" style="width: 37vw; height: 85.5vh; left: 22.56vw; top: 57px;">
                         <span>
                             <h4>step 2</h4>
                             <p>Lorem ipsum dolor sit amet, res tumo lord consectetur adipisicing elit.</p>
+                            <div class="nextstep">next</div>
+                            <div class="backstep">back</div>
                         </span>
                     </span>
-                    <span class="mark">
+                    <span class="mark" style="width: 15.85vw; height: 55vh; left: 65.4vw; top: 6.6vh;">
                         <span>
                             <h4>step 3</h4>
                             <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit.</p>
+                            <div class="nextstep">next</div>
+                            <div class="backstep">back</div>
                         </span>
                     </span>
-                    <span class="mark">
+                    <span class="mark" style="width: 15.9vw; height: 55vh; left: 82.7vw; top: 6.6vh;">
                         <span>
                             <h4>step 4</h4>
                             <p>Lorem ipsum dolor sit amet, lorem remoconsectetur adipisicing elit.</p>
+                            <div class="nextstep">next</div>
+                            <div class="backstep">back</div>
                         </span>
                     </span>
-                    <span class="mark">
+                    <span class="mark" style="width: 2.71vw; height: 5vh; left: 0; top: 31.2vh;">
                         <span>
                             <h4>step 5</h4>
                             <p>Lorem ipsum dolor sit amet, chino remo morat consectetur  adipisicing elit.</p>
+                            <div class="nextstep">next</div>
+                            <div class="backstep">back</div>
                         </span>
                     </span>
                        
@@ -410,50 +419,7 @@
 <!-- -->        
     
 <!--Scripts-->
-<script src="https://cdn.jsdelivr.net/npm/chart.js@2.9.3/dist/Chart.min.js"></script>
 <script src="https://code.jquery.com/jquery-3.3.1.js"></script>
-
-<!--
-<script>
-    var ctx = document.getElementById('myChart').getContext('2d');
-var chart = new Chart(ctx, {
-    // The type of chart we want to create
-    type: 'line',
-
-    // The data for our dataset
-    data: {
-        labels: ['week 0', 'week 1', 'week 2', 'week 3', 'week 4'],
-        datasets: [{
-            label: '',
-            backgroundColor: 'rgba(129, 210, 231, 0.8)',
-            borderColor: '#81D2E7',
-            data: [0, 20, 5, 1, 15]
-        }]
-    },
-
-    // Configuration options go here
-    options: {
-        legend: {display: false},
-        
-        layout:{
-            padding: {top:10,bottom:0,right:5,left:5},
-        },
-        elements:{
-            point: {borderWidth: 2},
-            line: {
-                tension: 0.4 // disables bezier curves
-            }
-        },
-        line:{
-            point: {backgroundColor: 'green'},
-        },
-        tooltips:{
-            
-        },
-    }
-});
-</script>
--->
 
 <script>
     window.onload = function(){
@@ -552,46 +518,58 @@ var ba = $('.banner section');
 </script>
 
 <script type="text/javascript">
+    var marcas = document.querySelectorAll('.mark');
+
     document.querySelector('.guide .list h3 span').addEventListener('click', ()=>{
+        for (let index = 0; index < marcas.length; index++) {
+            marcas[index].classList.remove('step');
+        }
         document.querySelector('.guide').classList.toggle('tutorial');
+        document.querySelector('.preview').classList.toggle('tutorial');
+        marcas[0].classList.toggle('step');
 })
 </script>
 
 <script type="text/javascript">
-    var marcas = document.querySelectorAll('.mark');
+    var nstep = document.querySelectorAll('.mark span .nextstep');
+    var bstep = document.querySelectorAll('.mark span .backstep');
 
-    function vacio() {
-        for (let index = 0; index < marcas.length; index++) {
-            marcas[index].classList.remove('lleno');
-        }
-    }
-
-    marcas[0].addEventListener('mouseover', ()=>{
-        marcas[0].classList.add('lleno');
+    nstep[0].addEventListener('click', ()=>{
+        marcas[0].classList.remove('step');
+        marcas[1].classList.add('step');    
     })
-    marcas[1].addEventListener('mouseover', ()=>{
-        marcas[0].classList.add('lleno');
-        marcas[1].classList.add('lleno');    
+    nstep[1].addEventListener('click', ()=>{
+        marcas[1].classList.remove('step');
+        marcas[2].classList.add('step');    
     })
-    marcas[2].addEventListener('mouseover', ()=>{
-        marcas[0].classList.add('lleno');
-        marcas[1].classList.add('lleno');
-        marcas[2].classList.add('lleno');        
+    bstep[0].addEventListener('click', ()=>{
+        marcas[1].classList.remove('step');
+        marcas[0].classList.add('step');    
     })
-    marcas[3].addEventListener('mouseover', ()=>{
-        marcas[0].classList.add('lleno');
-        marcas[1].classList.add('lleno');
-        marcas[2].classList.add('lleno');        
-        marcas[3].classList.add('lleno');        
+    nstep[2].addEventListener('click', ()=>{
+        marcas[2].classList.remove('step');
+        marcas[3].classList.add('step');    
     })
-    marcas[4].addEventListener('mouseover', ()=>{
-        marcas[0].classList.add('lleno');
-        marcas[1].classList.add('lleno');
-        marcas[2].classList.add('lleno');        
-        marcas[3].classList.add('lleno');        
-        marcas[4].classList.add('lleno');        
+    bstep[1].addEventListener('click', ()=>{
+        marcas[2].classList.remove('step');
+        marcas[1].classList.add('step');    
     })
-    document.querySelector('.timeline').onmouseout = vacio;
+    nstep[3].addEventListener('click', ()=>{
+        marcas[3].classList.remove('step');
+        marcas[4].classList.add('step');    
+    })
+    bstep[2].addEventListener('click', ()=>{
+        marcas[3].classList.remove('step');
+        marcas[2].classList.add('step');    
+    })
+    nstep[4].addEventListener('click', ()=>{
+        marcas[4].classList.remove('step');
+        document.querySelector('.guide').classList.remove('tutorial');
+    })
+    bstep[3].addEventListener('click', ()=>{
+        marcas[4].classList.remove('step');
+        marcas[3].classList.add('step');    
+    })
 </script>
 <!--Script-->
 
