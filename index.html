@@ -88,7 +88,7 @@
 <!--  Panel derecho / estado -->                
         <div class="banner">
 
-            <section>
+            <section id="slide">
             <div id="last" class="box">
                 <div class="card">
                 <div class="fondo"></div>
@@ -429,7 +429,7 @@
 </script>
 
 <script type="text/javascript">
-var ba = $('.banner section');
+var ba = $('.banner #slide');
     $('.last').click(function(){
         ba.css('left', '0');
         $(this).siblings().removeClass('clicked');
