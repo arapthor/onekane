@@ -567,7 +567,7 @@ nav h1{
 .parche.one{
     top: -512%;
     left: 103%;
-    transform: rotate(180deg);
+    transform: rotate(180deg) rotateY(180deg);
 }
 .parche img{
     width: 55%;
